@@ -22,7 +22,8 @@ def get_prepopulated_value(field, instance):
     Returns:
         str: Prepopulated value.
     """
-    if hasattr(field.populate_from, '__call__'):
+    if callable(field.populate_from):
+        # import pytest; pytest.set_trace()
         # MD5Field(populate_from=lambda instance: ...)
         return field.populate_from(instance)
     else:

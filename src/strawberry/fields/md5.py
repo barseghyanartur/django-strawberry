@@ -26,6 +26,9 @@ class MD5Field(CharField):
         if self.populate_from:
             kwargs.setdefault('editable', False)
 
+        # Strip whitespace
+        self.strip_whitespace = kwargs.pop('strip_whitespace', True)
+
         # Unique_with value can be string or tuple
         self.unique_with = kwargs.pop('unique_with', ())
         if isinstance(self.unique_with, string_types):
@@ -119,14 +122,19 @@ class MD5Field(CharField):
                 )
 
         if value:
+            if self.strip_whitespace:
+                value = value.strip()
+            # else:
+            #     import pytest; pytest.set_trace()
+
             hash_value = generate_md5_hash(value)
         else:
             hash_value = None
 
-            if not self.blank:
-                hash_value = instance._meta.model_name
-            elif not self.null:
-                hash_value = ''
+            # if not self.blank:
+            #     hash_value = instance._meta.model_name
+            # elif not self.null:
+            #     hash_value = ''
 
             # Ensure the hash_value is unique (if required)
             # if self.unique or self.unique_with:

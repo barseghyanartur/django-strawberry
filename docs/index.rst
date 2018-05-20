@@ -49,6 +49,8 @@ MD5 field
 In case you want to have an MD5 field populated from another field of the same
 model.
 
+Example 1
+~~~~~~~~~
 **myapp/models.py**
 
 .. code-block:: python
@@ -59,7 +61,11 @@ model.
     class MyModel(models.Model):
 
         title = models.CharField(max_length=255)
-        title_hash = MD5Field(populate_from='title')
+        title_hash = MD5Field(
+            populate_from='title',
+            null=True,
+            blank=True
+        )
 
         def __str__(self):
             return self.title
@@ -71,6 +77,46 @@ model.
     from myapp.models import MyModel
 
     mymodel = MyModel.objects.create(title="Lorem7")
+    print(mymodel.title_hash)
+    'd48a712e77902d0558a3721d9a4740c9'
+
+Example 2
+~~~~~~~~~
+The `populate_from` argument can also be a callable, that would expect
+the model instance as an argument. Thus, example identical to the first one
+would be:
+
+**myapp/models.py**
+
+.. code-block:: python
+
+    from django.db import models
+    from strawberry.fields import MD5Field
+
+
+    def strip_title(instance):
+        return instance.title.strip()
+
+
+    class MyModel(models.Model):
+
+        title = models.CharField(max_length=255)
+        title_hash = MD5Field(
+            populate_from=strip_title,
+            null=True,
+            blank=True,
+        )
+
+        def __str__(self):
+            return self.title
+
+**myapp/example.py**
+
+.. code-block:: python
+
+    from myapp.models import MyModel
+
+    mymodel = MyModel.objects.create(title=" Lorem7 ")
     print(mymodel.title_hash)
     'd48a712e77902d0558a3721d9a4740c9'
 

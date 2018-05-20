@@ -24,6 +24,9 @@ class BaseBookFactory(DjangoModelFactory):
 
     title = Faker('text', max_nb_chars=100)
     summary = Faker('text')
+    description = Faker('text')
+    credits = Faker('text')
+    synopsis = Faker('text')
     publication_date = Faker('date')
     price = Faker('pydecimal', left_digits=2, right_digits=2, positive=True)
     isbn = Faker('isbn13')

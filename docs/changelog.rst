@@ -15,8 +15,25 @@ are used for versioning (schema follows below):
   0.3.4 to 0.4).
 - All backwards incompatible changes are mentioned in this document.
 
+0.1.1
+-----
+2018-05-20
+
+.. note::
+
+    Release supported by `Teamable <https://www.teamable.com/>`_ - an employee
+    referral and diversity hiring platform
+
+- Make it possible to auto-strip the whitespace from `populated_from` value.
+- More tests.
+
 0.1
 ---
 2018-05-20
+
+.. note::
+
+    Release supported by `Teamable <https://www.teamable.com/>`_ - an employee
+    referral and diversity hiring platform
 
 - Initial beta release.
