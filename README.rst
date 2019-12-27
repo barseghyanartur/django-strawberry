@@ -39,7 +39,6 @@ Documentation is available on `Read the Docs
 
 Main features and highlights
 ============================
-
 - MD5Field.
 
 Installation
