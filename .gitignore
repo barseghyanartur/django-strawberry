@@ -36,3 +36,4 @@ codebin/
 /src/django_strawberry.egg-info
 #/examples/simple/settings/__init__.py
 /examples/simple/settings/local_settings.py
+.pytest_cache/

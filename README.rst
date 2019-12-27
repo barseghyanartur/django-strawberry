@@ -3,15 +3,37 @@ django-strawberry
 =================
 Additional fields for(ever) Django.
 
+.. image:: https://img.shields.io/pypi/v/django-strawberry.svg
+   :target: https://pypi.python.org/pypi/django-strawberry
+   :alt: PyPI Version
+
+.. image:: https://img.shields.io/pypi/pyversions/django-strawberry.svg
+    :target: https://pypi.python.org/pypi/django-strawberry/
+    :alt: Supported Python versions
+
+.. image:: https://img.shields.io/travis/barseghyanartur/django-strawberry/master.svg
+   :target: http://travis-ci.org/barseghyanartur/django-strawberry
+   :alt: Build Status
+
+.. image:: https://readthedocs.org/projects/django-strawberry/badge/?version=latest
+    :target: http://django-strawberry.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
+
+.. image:: https://img.shields.io/badge/license-GPL--2.0--only%20OR%20LGPL--2.1--or--later-blue.svg
+   :target: https://github.com/barseghyanartur/django-strawberry/#License
+   :alt: GPL-2.0-only OR LGPL-2.1-or-later
+
+.. image:: https://coveralls.io/repos/github/barseghyanartur/django-strawberry/badge.svg?branch=master
+    :target: https://coveralls.io/github/barseghyanartur/django-strawberry?branch=master
+    :alt: Coverage
+
 Prerequisites
 =============
-
-- Django 1.8, 1.9, 1.10, 1.11 and 2.0.
-- Python 2.7, 3.6
+- Django 1.11, 2.0, 2.1, 2.2 and 3.0.
+- Python 2.7, 3.6, 3.7 and 3.8.
 
 Documentation
 =============
-
 Documentation is available on `Read the Docs
 <http://django-strawberry.readthedocs.io/>`_.
 
@@ -22,7 +44,6 @@ Main features and highlights
 
 Installation
 ============
-
 (1) Install latest stable version from PyPI:
 
     .. code-block:: sh
@@ -43,7 +64,6 @@ Installation
 
 Usage
 =====
-
 MD5 field
 ---------
 In case you want to have an MD5 field populated from another field of the same
@@ -135,7 +155,7 @@ To test against specific environment, type:
 
 .. code-block:: sh
 
-    tox -e py36-django110
+    tox -e py38-django30
 
 To test just your working environment type:
 
@@ -193,15 +213,12 @@ Keep the following hierarchy.
 
 License
 =======
-
-GPL 2.0/LGPL 2.1
+GPL-2.0-only OR LGPL-2.1-or-later
 
 Support
 =======
-
 For any issues contact me at the e-mail given in the `Author`_ section.
 
 Author
 ======
-
 Artur Barseghyan <artur.barseghyan@gmail.com>
