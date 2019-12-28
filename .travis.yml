@@ -1,8 +1,5 @@
 dist: xenial
 
-services:
-  - elasticsearch
-
 language: python
 
 matrix:
